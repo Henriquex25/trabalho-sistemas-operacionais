@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulo da página</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="conteudo">
+            <!-- Título -->
+            <h1>Lista de tarefas</h1>
+
+            <!-- Botão de adicionar tarefas -->
+            <button
+                type="button"
+                class="botao-criar"
+                onclick="abrirModal('Adicionar Tarefa')"
+            >
+                Nova tarefa
+            </button>
+
+            <!-- Tabela -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome da tarefa</th>
+                        <th>Descrição</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal de adicionar tarefa -->
+    <div class="modal">
+        <div class="modal-conteudo">
+            <h2 style="margin-left:-0.5rem" id="titulo-modal"></h2>
+
+            <button
+                class="botao-fechar"
+                type="button"
+                onclick="fecharModal()"
+            >
+                X
+            </button>
+
+            <form class="formulario-tarefa" onsubmit="salvarTarefa(event)" data-action="" data-index="" id="formulario-tarefa">
+                <label for="nome">Nome da tarefa</label>
+                <input type="text" id="input-nome-tarefa">
+
+                <label for="nome">Descrição</label>
+                <textarea rows="5" id="input-descricao-tarefa"></textarea>
+
+                <button type="submit" id="botao-modal-salvar">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
